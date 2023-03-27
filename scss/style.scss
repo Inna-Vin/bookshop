@@ -1,0 +1,261 @@
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat/Montserrat-Medium.ttf');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat/Montserrat-Bold.ttf');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat/Montserrat-Black.ttf');
+    font-weight: 900;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('../fonts/Open_Sans/OpenSans-Regular.ttf');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@import "variables";
+
+/* generic */
+body {
+    margin: 0;
+}
+
+.header {
+    margin: 0 auto;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background-color: white;
+
+    &__container {
+        max-width: 1120px;
+        height: 116px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &-menu {
+            display: flex;
+            justify-content: space-between;
+
+            &-item {
+                font-family: 'Montserrat';
+                font-style: normal;
+                font-weight: 700;
+                font-size: 10px;
+                text-transform: uppercase;
+                color: $text-ligthgray;
+                text-decoration: none;
+                margin: 0 20px;
+
+                &:active {
+                    font-family: 'Montserrat';
+                    font-style: normal;
+                    font-weight: 900;
+                    font-size: 10px;
+                    color: $bold-text-blue;
+                }
+            }
+        }
+
+        &-buttons {
+            &-item {
+                background-color: transparent;
+                border: none;
+                margin: 0 10px;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.section__slider {
+    position: relative;
+    max-width: 1440px;
+    margin: 0 auto;
+
+    &-slider {
+        max-width: 1120px;
+        margin: 0 auto;
+        height: 700px;
+        position: relative;
+
+        .image {
+            background-size: cover;
+            background-position: center center;
+            width: 1120px;
+            height: 700px;
+            position: absolute;
+            opacity: 0;
+            transition: opacity 500ms ease;
+    
+            &.active {
+                opacity: 1;
+            }
+        }
+    }
+
+    &-dots {
+        display: flex;
+        justify-content: center;
+
+        &-item {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #EFEEF6;
+            margin: 17px 5px;
+            cursor: pointer;
+            transition: background 0.4s ease;
+
+            &:hover, &.active {
+                background-color: $violet-background-dots;
+            }
+        }
+
+    }
+
+    &-link {
+        position: absolute;
+        padding: 26px 20px;
+        box-sizing: border-box;
+        text-decoration: none;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-end;
+        
+        &.n1 {
+            width: 149px;
+            height: 204px;
+            background-color: $violet-background-dots;
+            top: 79px;
+            right: 74px
+        }
+
+        &.n2 {
+            width: 137px;
+            height: 273px;
+            background-color: $pink-backdround;
+            top: 362px;
+            right: 0;
+        }
+
+        &-text {
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 22px;
+            text-transform: uppercase;
+            color: $bold-text-blue;
+
+        }
+    }
+}
+
+.section__books {
+    max-width: 1120px;
+    margin: 100px auto;
+    display: flex;
+
+    &-list {
+        width: 416px;
+        background-color: $background-list;
+        padding: 45px 0 80px 160px;
+        box-sizing: border-box;
+        position: relative;
+        left: -160px;
+
+        ul {
+            padding: 0;
+
+            li {
+                list-style: none;
+                font-family: 'Montserrat';
+                font-style: normal;
+                font-weight: 500;
+                font-size: 12px;
+                line-height: 15px;
+                text-transform: capitalize;
+                color: $text-ligthgray;
+                margin: 20px 0;
+                cursor: pointer;
+
+                &.active {
+                    font-weight: 700;
+                    font-size: 16px;
+                    color: $bold-text-blue;
+                    list-style-type: disc;
+
+                    &::marker {
+                        color: #756AD3;
+                    }
+                }
+            }
+        }
+    }
+
+    &-bookcards {
+        display: flex;
+        flex-wrap: wrap;
+
+        &-item {
+            display: flex;
+
+            &-img {
+                width: 210px;
+                height: 300px;
+            }
+
+            &-info {
+                p {
+                    font-family: 'Open Sans';
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 10px;
+                    line-height: 14px;
+                    text-transform: capitalize;
+                    color: $text-ligthgray;
+                }
+
+                h4 {
+                    font-family: 'Montserrat';
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 16px;
+                    line-height: 20px;
+                    color: $bold-text-blue;
+                }
+
+                button {
+                    background-color: transparent;
+                    padding: 18px 66px;
+                    border: 1px solid $button-color;
+                    color: $button-color;
+                    cursor: pointer;
+
+                    &.active {
+                        border: 1px solid #EEEDF5;
+                        color: $text-ligthgray;
+                    }
+                }
+            }
+        }
+    }
+}
