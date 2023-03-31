@@ -1,3 +1,5 @@
+export { images, initSlider}
+
 let images = [{
     url: './img/slider-img1.png'
 },{
